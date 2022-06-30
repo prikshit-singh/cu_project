@@ -1,0 +1,28 @@
+.mainDivFooter{
+    /* position:absolute; */
+    bottom:0;
+    width:100%;
+    height:3rem;   /* Height of the footer */
+    background:rgba(0, 0, 0, 0.06);
+    
+}
+
+.footerFlex{
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+}
+.footerHeading{
+    display: flex;
+    color: rgb(53, 53, 252);
+    font-weight: bolder;
+}
+.footerHeading span{
+    color: red;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-right: 3px;
+    margin-top: -2px;
+}

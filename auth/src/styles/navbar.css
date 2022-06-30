@@ -1,0 +1,34 @@
+.mainNav{
+    display: flex;
+    position: fixed;
+    top: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url('../images//navimage.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.mainNav::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(83, 61, 168, 0.248);
+    height: 3rem;
+    width: 110%;
+}
+
+.mainNav li{
+    list-style: none;
+    padding-right: 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+.link{
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
