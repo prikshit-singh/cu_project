@@ -8,6 +8,7 @@ const root = require('path').join(__dirname, '..', 'satta_app', 'build');
 const usersignup_route = require('./routes/user/usersignup');
 const userlogin_route = require('./routes/user/userlogin');
 const userdata_route = require('./routes/user/userdata');
+const otp_send = require('./routes/user/sendotp');
 require('./connection/connection');
 require('dotenv').config();
 
@@ -21,6 +22,7 @@ res.send('Welcome to learn backend with express!')
 
 app.use(usersignup_route);
 app.use(userlogin_route);
+app.use(otp_send);
 
 
 if (process.env.NODE_ENV === 'production') {

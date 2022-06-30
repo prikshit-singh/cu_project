@@ -5,7 +5,7 @@ const user_model = require('../../models/user_model');
 
 
 const usersignup_route = app.post('/usersignup', async (req, res) => {
-    var { username, email, password_hash } = req.body;
+    var { username, phone, password_hash } = req.body;
 
     // Generate a salt
     const salt = await bcrypt.genSalt(12);
@@ -13,7 +13,7 @@ const usersignup_route = app.post('/usersignup', async (req, res) => {
     // // Hash password
     password_hash = await bcrypt.hash(password_hash, salt);
     // // console.log(req.body.password_hash)
-    var user_data = { username, email, password_hash }
+    var user_data = { username, phone, password_hash }
 
     var userData = new user_model(user_data)
     userData.save().then((data) => {

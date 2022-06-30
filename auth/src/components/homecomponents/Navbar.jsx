@@ -11,15 +11,10 @@ function Navbar(props) {
                 })}>
                     Home
                 </NavLink></li>
-                <li><NavLink className='link' to="/dashboard" style={({ isActive }) => ({
+                <li><NavLink className='link' to="/signup" style={({ isActive }) => ({
                     color: isActive ? 'blue' : 'white'
                 })}>
-                    Dashboard
-                </NavLink></li>
-                <li><NavLink className='link' to="/login" style={({ isActive }) => ({
-                    color: isActive ? 'blue' : 'white'
-                })}>
-                    Login
+                    signup
                 </NavLink></li>
             </div>
         </div>

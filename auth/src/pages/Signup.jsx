@@ -12,13 +12,24 @@ import '../styles/login.css'
 
  function Signup(props) {
     const [name, setName] = useState()
-    const [email, setEmail] = useState()
+    const [phone, setPhone] = useState()
     const [password, setPassword] = useState()
 var navigate = useNavigate()
 // console.log(links.SignupLink)
   const userSignup =  () => {
-        
-
+        if(!phone){
+            alert('enter phone')
+            return 0;
+        }
+        if(!name){
+            alert('enter username')
+            return 0;
+        }
+        if(!password){
+            alert('enter password')
+            return 0;
+        }
+        var origphone = `+91${phone}`
         fetch("http://localhost:8080/usersignup", {
             method: "post",
             headers: {
@@ -27,7 +38,7 @@ var navigate = useNavigate()
             },
             body: JSON.stringify({
                 username:name,
-                email: email,
+                phone: origphone,
                 password_hash: password
             })
         })
@@ -38,12 +49,8 @@ var navigate = useNavigate()
                     return 0;
                 }
                 //do something awesome that makes the world a better place
+                alert("user created, please log in now")
                 return response.json()
-            }).then(async (data) => {
-                console.log(data)
-                // window.localStorage.setItem('token',data.token);
-                // navigate('/dashboard')
-                // window.location.href = '/dashboard'
             }).catch(err => {
                 console.log(err)
             })
@@ -56,7 +63,7 @@ var navigate = useNavigate()
 
     const userEmail = (e) => {
         // console.log(e.target.value)
-        setEmail(e.target.value)
+        setPhone(e.target.value)
     }
 
     const userPassword = (e) => {
@@ -75,15 +82,15 @@ var navigate = useNavigate()
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="tect" value={name} placeholder="Enter Username" onChange={(e) => userName(e)} />
+                        <Form.Control type="text" value={name} placeholder="Enter Username" onChange={(e) => userName(e)} />
                       
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" value={email} placeholder="Enter email" onChange={(e) => userEmail(e)} />
+                        <Form.Control type="email" value={phone} placeholder="Enter email" onChange={(e) => userEmail(e)} />
                         <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                            We'll never share your details with anyone else.
                         </Form.Text>
                     </Form.Group>
 

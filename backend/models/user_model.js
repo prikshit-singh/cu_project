@@ -6,13 +6,17 @@ const userSchema = new mongoose.Schema({
     required:true,
     minlength:3
    },
-   email:{
+   phone:{
     type:String,
     required:true
    },
    password_hash:{
     type:String,
     required:true
+   },
+   otp:{
+    type:Number,
+    required:false
    }
   
 
